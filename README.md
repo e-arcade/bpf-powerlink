@@ -6,21 +6,30 @@
 -   `/src` - all sources
 -   `Makefile` - makefile arranged so that `make` in project root builds all artifacts
 
+# Cloning
+
+```
+git clone --recurse-submodules git@github.com:e-arcade/bpf-powerlink.git
+
+OR
+
+git clone --recurse-submodules https://github.com/e-arcade/bpf-powerlink.git
+```
+
 # Build
 
 ```
-git clone --recurse-submodules git@github.com:edwin/bpf-powerlink.git
 cd ./bpf-powerlink && make
 ```
 
 # Run
 
 ```
-1) sudo ./handle-powerlink <ifname>
+sudo ./handle-powerlink <ifname>
 
 OR
 
-2) sudo ip link set dev <ifname> xdpgeneric object build/handle-powerlink.bpf.o sec xdp
-   sudo ip link set dev <ifname> xdpgeneric off
+1) sudo ip link set dev <ifname> xdpgeneric object build/handle-powerlink.bpf.o sec xdp
+2) sudo ip link set dev <ifname> xdpgeneric off
 ```
 
